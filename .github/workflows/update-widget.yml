@@ -1,18 +1,16 @@
-name: Update Steam Widget
+name: Update Farming Widget
 
 on:
   workflow_dispatch:
 
   schedule:
-    - cron: "0 0 */1 * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   update:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -22,10 +20,10 @@ jobs:
           node-version: 22
 
       - name: Run Widget Updater
-        run: node steam-widget.js
+        run: node farming-widget.js
         env:
-          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
-          STEAM_ID: ${{ secrets.STEAM_ID }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
           DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
+          PLAYER_UUID: ${{ secrets.PLAYER_UUID }}
+          PROFILE_UUID: ${{ secrets.PROFILE_UUID }}

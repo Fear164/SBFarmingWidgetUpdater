@@ -1,56 +1,9 @@
-# Steam Widget Updater
+# Skyblock Farming Widget Updater
 
-A GitHub Actions-based Steam stats fetcher that automatically updates a Discord application profile widget.
+A GitHub Actions-based Skyblock Farming stats fetcher that automatically updates a Discord application profile widget.
+it is a modified version of 
 
-Runs every 1 days or manually via workflow dispatch.
-
----
-
-## Importing the Discord Widget
-
-This repository includes a pre-configured widget layout file:
-
-```
-
-widget-layout.json
-
-```
-
-This file is used only for importing the widget layout into Discord. It is not required for the Node.js script to run.
-
----
-
-### How to import the widget
-
-1. Open the Discord Previews server thread:
-   
-   https://discord.com/channels/603970300668805120/1520805824040013976/threads/1521122189993050183/1521122189993050183
-
-2. Locate the widget import tool provided in the thread (Discord Widget Extension).
-
-3. Open the widget import window.
-
-4. Open the file in this repository:
-```
-
-steam-widget.json
-
-```
-
-5. Copy the entire contents of the file.
-
-6. Paste it into the widget import window.
-
-7. Click **Import**.
-
----
-
-### Important Notes
-
-- This file only defines the layout and data bindings.
-- It does NOT contain your Steam or Discord credentials.
-- The Node.js script is responsible for providing live data to this widget.
-- If the widget layout is updated in the future, re-importing may be required.
+Runs every 5 Minutes or manually via workflow dispatch.
 
 
 ---
@@ -113,7 +66,7 @@ Approve if prompted.
 Go to:
 
 ```
-Actions → Update Steam Widget → Run workflow
+Actions → Update Farming Widget → Run workflow
 ```
 
 Check logs for:
@@ -126,10 +79,10 @@ Check logs for:
 
 ## Automatic Updates
 
-Runs every 1 days (UTC):
+Runs every 5 minutes:
 
 ```yaml
-0 0 */1 * *
+*/5 * * * *
 ```
 
 ---
@@ -138,16 +91,15 @@ Runs every 1 days (UTC):
 
 Each run:
 
-1. Fetches Steam profile data
-2. Calculates:
+1. Fetches Skyblock profile data
+2. Displays:
 
-   * Total playtime
-   * Recent 2-week playtime
-   * Most played game
-   * Steam level
-   * Friends count
-   * Badge count
-   * Profile age
+   * Farming Level
+   * Skill XP
+   * Pest Kills
+   * Favourite Crop Collection (Currently limited to Moonflower)
+   * Total Copper
+   * Total Visitors served
 3. Builds widget payload
 4. Sends PATCH request to Discord API
 5. Updates your profile widget
@@ -156,8 +108,7 @@ Each run:
 
 ## Requirements
 
-* Steam profile must be accessible via Steam Web API
-* Valid Steam Web API key
+* Skyblockprofile must be accessible via Hypixel API and Elite Farmers API
 * Discord application with widget support
 * GitHub Actions enabled
 
@@ -168,10 +119,6 @@ Each run:
 ### Missing secrets error
 
 GitHub Secrets were not configured correctly.
-
-### Steam API error (403 / 401)
-
-Invalid Steam API key or Steam ID.
 
 ### Discord API 400 error
 
