@@ -103,9 +103,11 @@ async function main() {
   log("Fetching Elite data...");
 
   const [profileData, lbData] = await Promise.all([
-    farming(`https://api.eliteskyblock.com/profile/${playerID}/${profileID}`),
     farming(
-      `https://api.eliteskyblock.com/leaderboard/rank/pests/${playerID}/${profileID}`,
+      `https://api.eliteskyblock.com/profile/${PLAYER_UUID}/${PROFILE_UUID}`,
+    ),
+    farming(
+      `https://api.eliteskyblock.com/leaderboard/rank/pests/${PLAYER_UUID}/${PROFILE_UUID}`,
     ),
   ]);
 

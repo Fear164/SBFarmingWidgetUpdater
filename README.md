@@ -17,8 +17,8 @@ Click the Fork button on GitHub (top right).
 Then clone your fork (optional):
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/SteamWidgetUpdater.git
-cd SteamWidgetUpdater
+git clone https://github.com/YOUR_USERNAME/SBFarmingWidgetUpdater.git
+cd SBFarmingWidgetUpdater
 ````
 
 ---
@@ -35,8 +35,8 @@ Add the following:
 
 | Secret          | Description            |
 | --------------- | ---------------------- |
-| STEAM_API_KEY   | Steam Web API key      |
-| STEAM_ID        | Your SteamID64         |
+| PROFILE_UUID    | Skyblock Profile ID    |
+| PLAYER_UUID     | Minecraft UUID         |
 | BOT_TOKEN       | Discord bot token      |
 | APPLICATION_ID  | Discord application ID |
 | DISCORD_USER_ID | Your Discord user ID   |
