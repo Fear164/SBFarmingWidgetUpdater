@@ -212,12 +212,12 @@ async function main() {
         {
           type: 1,
           name: "farmingLevel",
-          value: String(farmingLevel) || "Unknown",
+          value: String(`Skill Level: ${farmingLevel}`) || "Unknown",
         },
         {
           type: 1,
           name: "xp",
-          value: String(xp) || "Unknown",
+          value: String(`XP: ${xp}`) || "Unknown",
         },
         {
           type: 1,
@@ -227,7 +227,7 @@ async function main() {
         {
           type: 1,
           name: "favCropData",
-          value: String(favCropData) || "Unknown",
+          value: String(`Moonflower: ${favCropData}`) || "Unknown",
         },
         {
           type: 1,
@@ -242,7 +242,7 @@ async function main() {
         {
           type: 1,
           name: "weightData",
-          value: String(weightData) || "Unknown",
+          value: String(weightData.toFixed(2)) || "Unknown",
         },
       ],
     },
