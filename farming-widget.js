@@ -242,7 +242,8 @@ async function main() {
         {
           type: 1,
           name: "weightData",
-          value: String(weightData.toFixed(2)) || "Unknown",
+          value:
+            String(`Farming Weight: ${weightData.toFixed(2)}`) || "Unknown",
         },
       ],
     },
