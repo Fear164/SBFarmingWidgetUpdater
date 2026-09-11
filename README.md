@@ -71,7 +71,7 @@ Actions → Update Farming Widget → Run workflow
 
 Check logs for:
 
-* Steam data fetched
+* EliteAPI data fetched
 * Stats calculated
 * Discord update successful
 
@@ -108,7 +108,7 @@ Each run:
 
 ## Requirements
 
-* Skyblockprofile must be accessible via Hypixel API and Elite Farmers API
+* Skyblock Profile must be accessible via Hypixel API and Elite Farmers API
 * Discord application with widget support
 * GitHub Actions enabled
 
